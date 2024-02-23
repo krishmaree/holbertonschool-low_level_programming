@@ -2,14 +2,14 @@
 #include <time.h>
 #include <stdio.h>
 
-/** 
+/**
  * main - Entry point
  *
  * Return: Always 0 (Success)
  *
  */
 
-int main (void)
+int main(void)
 {
 	int n;
 	int l_d;
@@ -22,13 +22,10 @@ int main (void)
 
 	if (l_d > 5)
 		printf("greater than 5\n");
-	
 	else if (l_d == 0)
 		printf("0\n");
-	
 	else if (l_d < 6) 
 		printf("less than 6 and not 0\n");
 
 return (0);
-
 }

@@ -3,17 +3,22 @@
 /**
  * print_rev - Function that prints a string in reverse
  * followed by a new line
- * @str: Pointer to the string to be printed in reverse
+ * @s: Pointer to the string to be printed in reverse
  * Return: String printed in reverse
  */
-void print_rev(char *str)
+void print_rev(char *s)
 {
-	int i, j;
+	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
-		for (j = i - 1; j >= 0; j--)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		_putchar(str[j]);
 	}
-		_putchar('\n');
+
+	for (i--; i >= 0; i--)
+	{
+		_putchar(s[i]);
+	}
+
+	_putchar('\n');
+
 }

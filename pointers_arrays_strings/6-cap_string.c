@@ -27,6 +27,11 @@ char *cap_string(char *str)
 		{
 			capital = 1;
 		}
+		else if (!((str[i] >= 'a' && str[i] <= 'z') ||
+			(str[i] >= 'A' && str[i] <= 'Z')))
+		{
+			capital = 1;
+		}
 	}
 	return (str);
 }

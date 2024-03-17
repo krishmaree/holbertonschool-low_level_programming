@@ -12,24 +12,28 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	size_t len_s1, len_s2;
 	char *concatenated;
+	unsigned int len_s1 = 0, len_s2 = 0, i, j;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	if (s1 != NULL)
+	{
+		for (len_s1 = 0; s1[len_s1]; len_s1++);
+	}
+	if (s2 != NULL)
+	{
+		for (len_s2 = 0; s2[len_s2]; len_s2++);
+	}
 
-	while (s1[len_s1] != '\0')
-		len_s1++;
-	while (s2[len_s2] != '\0')
-		len_s2++;
-
-	concatenated = malloc((len_s1 = len_s2 + 1) * sizeof(char));
+	concatenated = malloc((len_s1 + len_s2 + 1) * sizeof(char));
 	if (concatenated == NULL)
 		return (NULL);
+	for (i = 0; i < len_s1; i++)
+		concatenated[i] = s1[i];
 
-	strcpy(concatenated, s1);
-	strcat(concatenated, s2);
-		return (concatenated);
+	for (j = 0; j < len_s2; j++)
+		concatenated[i + j] = s2[j];
+
+	concatenated[len_s1 + len_s2] = '\0';
+
+	return (concatenated);
 }

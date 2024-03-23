@@ -2,6 +2,12 @@
 #define _DOG_H_
 
 /**
+ * dog_t - typedef for struct dog
+ *
+ */
+typedef struct dog dog_t;
+
+/**
  * struct dog - defines dog attributes
  *
  * @name: name of dog
@@ -13,7 +19,7 @@ struct dog
 {
 	char *name;
 	float age;
-	char *name;
+	char *owner;
 };
 
 void init_dog(struct dog *d, char *name, float age, char *owner);

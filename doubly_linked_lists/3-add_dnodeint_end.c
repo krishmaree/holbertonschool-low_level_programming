@@ -22,7 +22,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	new_node->n = n; /* sets value of the new node */
 
-	new_node->next = NULL; /* sets the next pointer of the new node to NULL since it'd be the last*/
+	new_node->next = NULL;
 
 	if (*head ==  NULL) /* if list is empty, make the new node the head */
 	{

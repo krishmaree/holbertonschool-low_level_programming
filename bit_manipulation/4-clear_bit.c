@@ -21,7 +21,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 
 	/* clear the bit at the specified index to 0*/
-	*n &= ~(1UL << index);
+	*n = *n & ~(1 << index);
 
-	return (-1);
+	return (1);
 }

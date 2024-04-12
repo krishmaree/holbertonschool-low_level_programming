@@ -11,7 +11,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, bytes_written;
+	int fd,i = 0, bytes_written;
 
 	if (filename == NULL)
 		return (-1);
@@ -23,10 +23,10 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1); /* if open fails, return -1*/
 
-	/*if text_content is not NULL, we use 'write' to write its content*/
-	if (text_content != NULL)
+	while (text_content[i] != '\0')
+		i++;
 	{ /* use strlen to determine length of string*/
-		bytes_written = write(fd, text_content, strlen(text_content));
+		bytes_written = write(fd, text_content, i);
 		if (bytes_written == -1)
 		{
 			close(fd);
